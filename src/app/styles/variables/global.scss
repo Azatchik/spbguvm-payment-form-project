@@ -1,0 +1,175 @@
+:root {
+    --font-family-main: "Inter Tight", "Times New Roman", sans-serif;
+
+    // -------------------------------- DESKTOP FONTS -------------------------------------------------
+
+    // NUMBERS
+    --font-size-numbers-desktop: 80px;
+    --font-line-numbers-desktop: 72px;
+    --font-numbers-desktop: 400 var(--font-size-numbers-desktop) / var(--font-line-numbers-desktop) var(--font-family-main);
+
+    // H1
+    --font-size-h1-desktop: 70px;
+    --font-line-h1-desktop: 77px;
+    --font-h1-desktop: 400 var(--font-size-h1-desktop) / var(--font-line-h1-desktop) var(--font-family-main);
+
+    // H2
+    --font-size-h2-desktop: 45px;
+    --font-line-h2-desktop: 49.5px;
+    --font-h2-desktop: 400 var(--font-size-h2-desktop) / var(--font-line-h2-desktop) var(--font-family-main);
+
+    // H2-LIGHT
+    --font-size-h2-light-desktop: 45px;
+    --font-line-h2-light-desktop: 49.5px;
+    --font-h2-light-desktop: 300 italic var(--font-size-h2-light-desktop) / var(--font-line-h2-light-desktop) var(--font-family-main);
+
+    // H3
+    --font-size-h3-desktop: 40px;
+    --font-line-h3-desktop: 44px;
+    --font-h3-desktop: 400 var(--font-size-h3-desktop) / var(--font-line-h3-desktop) var(--font-family-main);
+
+    // H4
+    --font-size-h4-desktop: 25px;
+    --font-line-h4-desktop: 27.5px;
+    --font-h4-desktop: 400 var(--font-size-h4-desktop) / var(--font-line-h4-desktop) var(--font-family-main);
+
+    // H4-MEDIUM
+    --font-size-h4-medium-desktop: 25px;
+    --font-line-h4-medium-desktop: 27.5px;
+    --font-h4-medium-desktop: 500 var(--font-size-h4-medium-desktop) / var(--font-line-h4-medium-desktop) var(--font-family-main);
+
+    // H4-ITALIC
+    --font-size-h4-italic-desktop: 25px;
+    --font-line-h4-italic-desktop: 27.5px;
+    --font-h4-italic-desktop: 400 italic var(--font-size-h4-italic-desktop) / var(--font-line-h4-italic-desktop) var(--font-family-main);
+
+    // BodyL
+    --font-size-body-l-desktop: 20px;
+    --font-line-body-l-desktop: 22px;
+    --font-body-l-desktop: 400 var(--font-size-body-l-desktop) / var(--font-line-body-l-desktop) var(--font-family-main);
+
+    // Body
+    --font-size-body-desktop: 16px;
+    --font-line-body-desktop: 19.2px;
+    --font-body-desktop: 400 var(--font-size-body-desktop) / var(--font-line-body-desktop) var(--font-family-main);
+
+    // BodyS
+    --font-size-body-s-desktop: 14px;
+    --font-line-body-s-desktop: 18.2px;
+    --font-body-s-desktop: 400 var(--font-size-body-s-desktop) / var(--font-line-body-s-desktop) var(--font-family-main);
+
+    // BodyS-MEDIUM
+    --font-size-body-s-medium-desktop: 14px;
+    --font-line-body-s-medium-desktop: 18.2px;
+    --font-body-s-medium-desktop: 500 var(--font-size-body-s-medium-desktop) / var(--font-line-body-s-medium-desktop) var(--font-family-main);
+
+    // Body-FOOTER
+    --font-size-body-footer-desktop: 10px;
+    --font-line-body-footer-desktop: 11px;
+    --font-body-footer-desktop: 400 var(--font-size-body-footer-desktop) / var(--font-line-body-footer-desktop) var(--font-family-main);
+
+    // BUTTON
+    --font-size-button-desktop: 16px;
+    --font-line-button-desktop: 20.8px;
+    --font-button-desktop: 400 var(--font-size-button-desktop) / var(--font-line-button-desktop) var(--font-family-main);
+
+    // MENU
+    --font-size-menu-desktop: 16px;
+    --font-line-menu-desktop: 20.8px;
+    --font-menu-desktop: 400 var(--font-size-menu-desktop) / var(--font-line-menu-desktop) var(--font-family-main);
+
+    // MENU-CAPS
+    --font-size-menu-caps-desktop: 16px;
+    --font-line-menu-caps-desktop: 20.8px;
+    --font-menu-caps-desktop: 500 var(--font-size-menu-caps-desktop) / var(--font-line-menu-caps-desktop) var(--font-family-main);
+
+    // MENU-LARGE-ITALIC
+    --font-size-menu-large-italic-desktop: 20px;
+    --font-line-menu-large-italic-desktop: 24.2px;
+    --font-menu-large-italic-desktop: 400 italic var(--font-size-menu-large-italic-desktop) / var(--font-line-menu-large-italic-desktop) var(--font-family-main);
+
+    // MENU-LARGE-ITALIC-MEDIUM
+    --font-size-menu-large-italic-medium-desktop: 20px;
+    --font-line-menu-large-italic-medium-desktop: 24.2px;
+    --font-menu-large-italic-medium-desktop: 500 italic var(--font-size-menu-large-italic-medium-desktop) / var(--font-line-menu-large-italic-medium-desktop) var(--font-family-main);
+
+
+    // -------------------------------- MOBILE FONTS -------------------------------------------------
+
+    // H1
+    --font-size-h1-mobile: 40px;
+    --font-line-h1-mobile: 44px;
+    --font-h1-mobile: 400 var(--font-size-h1-mobile) / var(--font-line-h1-mobile) var(--font-family-main);
+
+    // H1-MINI
+    --font-size-h1-mini-mobile: 35px;
+    --font-line-h1-mini-mobile: 38.5px;
+    --font-h1-mini-mobile: 400 var(--font-size-h1-mini-mobile) / var(--font-line-h1-mini-mobile) var(--font-family-main);
+
+    // H1-MINI-ITALIC
+    --font-size-h1-mini-italic-mobile: 35px;
+    --font-line-h1-mini-italic-mobile: 38.5px;
+    --font-h1-mini-italic-mobile: 300 italic var(--font-size-h1-mini-italic-mobile) / var(--font-line-h1-mini-italic-mobile) var(--font-family-main);
+
+    // H2
+    --font-size-h2-mobile: 25px;
+    --font-line-h2-mobile: 27.5px;
+    --font-h2-mobile: 400 var(--font-size-h2-mobile) / var(--font-line-h2-mobile) var(--font-family-main);
+
+    // H2-MEDIUM
+    --font-size-h2-medium-mobile: 25px;
+    --font-line-h2-medium-mobile: 27.5px;
+    --font-h2-medium-mobile: 500 var(--font-size-h2-medium-mobile) / var(--font-line-h2-medium-mobile) var(--font-family-main);
+
+    // H2-ITALIC
+    --font-size-h2-italic-mobile: 25px;
+    --font-line-h2-italic-mobile: 27.5px;
+    --font-h2-italic-mobile: 400 italic var(--font-size-h2-italic-mobile) / var(--font-line-h2-italic-mobile) var(--font-family-main);
+
+    // H3
+    --font-size-h3-mobile: 20px;
+    --font-line-h3-mobile: 22px;
+    --font-h3-mobile: 400 var(--font-size-h3-mobile) / var(--font-line-h3-mobile) var(--font-family-main);
+
+    // H3-MEDIUM
+    --font-size-h3-medium-mobile: 20px;
+    --font-line-h3-medium-mobile: 22px;
+    --font-h3-medium-mobile: 500 var(--font-size-h3-medium-mobile) / var(--font-line-h3-medium-mobile) var(--font-family-main);
+
+    // BodyL
+    --font-size-body-l-mobile: 16px;
+    --font-line-body-l-mobile: 19.2px;
+    --font-body-l-mobile: 400 var(--font-size-body-l-mobile) / var(--font-line-body-l-mobile) var(--font-family-main);
+
+    // Body
+    --font-size-body-mobile: 14px;
+    --font-line-body-mobile: 16.8px;
+    --font-body-mobile: 400 var(--font-size-body-mobile) / var(--font-line-body-mobile) var(--font-family-main);
+
+    // Body-MEDIUM
+    --font-size-body-medium-mobile: 14px;
+    --font-line-body-medium-mobile: 16.8px;
+    --font-body-medium-mobile: 500 var(--font-size-body-medium-mobile) / var(--font-line-body-medium-mobile) var(--font-family-main);
+
+    // Body-MINI
+    --font-size-body-mini-mobile: 10px;
+    --font-line-body-mini-mobile: 11px;
+    --font-body-mini-mobile: 400 var(--font-size-body-mini-mobile) / var(--font-line-body-mini-mobile) var(--font-family-main);
+
+
+    // -------------------------------- OTHERS -------------------------------------------------
+
+
+
+    // Размеры
+    --header-mainPanel-height: 70px;
+
+    // z - Индексы
+    --header-z-index: 25;
+    --menu-z-index: 20;
+    --languages-z-index: 30;
+
+    // Цвета
+    --red-error: #E30000;
+    --red-error-bg: #FFF2F4;
+}

@@ -1,0 +1,46 @@
+.PageLoader {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 110;
+    animation: GradientToRight 1s ease-out infinite;
+    background: var(--blue);
+    cursor: wait;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 150%;
+        height: 110%;
+        transform: translateX(-100%);
+        background: radial-gradient(circle, rgba(114,123,248,0.23) 0%, rgba(114,123,248,0) 100%);
+        animation: load 2s ease infinite;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 150%;
+        height: 110%;
+        transform: translateX(-100%);
+        background: radial-gradient(circle, rgba(114,123,248,0.23) 0%, rgba(114,123,248,0) 100%);
+        animation: load 2s ease infinite;
+        animation-delay: 0.4s;
+    }
+}
+
+
+@keyframes load {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(250%);
+    }
+}
+

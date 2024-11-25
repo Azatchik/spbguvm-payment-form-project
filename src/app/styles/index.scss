@@ -1,0 +1,33 @@
+@import "reset";
+@import "variables/global";
+@import "themes/normal";
+@import "themes/accessibility";
+
+body {
+    width: 100%;
+    position: relative;
+}
+
+#root {
+    width: 100%;
+    background: var(--white);
+}
+
+.app {
+    min-width: 1230px;
+    width: 100%;
+    position: relative;
+}
+
+.app_tablet {
+    min-width: 786px;
+    width: 100%;
+}
+
+.app_mobile {
+    max-width: 786px;
+    width: 100%;
+}
+
+
+

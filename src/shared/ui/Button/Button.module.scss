@@ -1,0 +1,359 @@
+.Button {
+    border-radius: 15px;
+    height: 33px;
+    min-width: 98px;
+    font: var(--font-button-desktop);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    &:focus {
+        outline: 3px solid var(--blue-light);
+    }
+    white-space: nowrap;
+}
+
+.icon {
+    transition: all 0.6s ease;
+}
+
+.hoverBlock {
+    border-radius: 15px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    z-index: 1;
+    transition: all 0.6s ease;
+}
+
+.textWithArrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px 11px 5px 11px;
+    transition: all 0.6s ease;
+}
+
+
+// --------------- primary_white fill/outline ----------------
+// fill
+.primary_white_fill {
+    background: var(--white);
+    .hoverBlock {
+        background: var(--blue);
+    }
+    .icon {
+        fill: var(--blue);
+    }
+    .textWithArrow {
+        color: var(--blue);
+        border: 1px solid var(--white);
+    }
+    &:hover {
+        .hoverBlock {
+            left: 0;
+        }
+        .textWithArrow {
+            color: var(--white);
+        }
+        .icon {
+            fill: var(--white);
+        }
+    }
+    &:active {
+        .hoverBlock {
+            background: var(--blue-deep);
+            transition: background-color 0s;
+        }
+    }
+}
+
+// outline
+.primary_white_outline {
+    background: transparent;
+    .hoverBlock {
+        background: var(--white);
+    }
+    .icon {
+        fill: var(--white);
+    }
+    .textWithArrow {
+        color: var(--white);
+        border: 1px solid var(--white);
+    }
+    &:hover {
+        .hoverBlock {
+            left: 0;
+        }
+        .textWithArrow {
+            color: var(--blue);
+        }
+        .icon {
+            fill: var(--blue);
+        }
+    }
+    &:active {
+        .hoverBlock {
+            background: var(--grey-light);
+            transition: background-color 0s;
+        }
+    }
+}
+
+
+
+
+// --------------- primary_blue fill/outline ----------------
+//fill
+.primary_blue_fill {
+    background: var(--blue);
+    .hoverBlock {
+        background: var(--white);
+    }
+    .icon {
+        fill: var(--white);
+    }
+    .textWithArrow {
+        color: var(--white);
+        border: 1px solid var(--blue);
+    }
+    &:hover {
+        .hoverBlock {
+            left: 0;
+        }
+        .textWithArrow {
+            color: var(--blue);
+        }
+        .icon {
+            fill: var(--blue);
+        }
+    }
+    &:active {
+        .hoverBlock {
+            background: var(--grey-light);
+            transition: background-color 0s;
+        }
+    }
+}
+
+//outline
+.primary_blue_outline {
+    background: transparent;
+    .hoverBlock {
+        background: var(--blue);
+    }
+    .icon {
+        fill: var(--blue);
+    }
+    .textWithArrow {
+        color: var(--blue);
+        border: 1px solid var(--blue);
+    }
+    &:hover {
+        .hoverBlock {
+            left: 0;
+        }
+        .textWithArrow {
+            color: var(--white);
+        }
+        .icon {
+            fill: var(--white);
+        }
+    }
+    &:active {
+        .hoverBlock {
+            background: var(--blue-deep);
+            transition: background-color 0s;
+        }
+    }
+}
+
+
+
+// --------------- primary_dark fill/outline ----------------
+//fill
+.primary_dark_fill {
+    background: var(--black);
+    .hoverBlock {
+        background: var(--white);
+    }
+    .icon {
+        fill: var(--white);
+    }
+    .textWithArrow {
+        color: var(--white);
+        border: 1px solid var(--black);
+    }
+    &:hover {
+        .hoverBlock {
+            left: 0;
+        }
+        .textWithArrow {
+            color: var(--black);
+        }
+        .icon {
+            fill: var(--black);
+        }
+    }
+    &:active {
+        .hoverBlock {
+            background: var(--grey-light);
+            transition: background-color 0s;
+        }
+    }
+}
+
+//outline
+.primary_dark_outline {
+    background: transparent;
+    .hoverBlock {
+        background: var(--black);
+    }
+    .icon {
+        fill: var(--black);
+    }
+    .textWithArrow {
+        color: var(--black);
+        border: 1px solid var(--black);
+    }
+    &:hover {
+        .hoverBlock {
+            left: 0;
+        }
+        .textWithArrow {
+            color: var(--white);
+        }
+        .icon {
+            fill: var(--white);
+        }
+    }
+    &:active {
+        .hoverBlock {
+            background: var(--black);
+            transition: background-color 0s;
+        }
+    }
+}
+
+
+// --------------- secondary_white ----------------
+.secondary_white {
+    background: transparent;
+    .hoverBlock {
+        background: var(--white);
+    }
+    .icon {
+        fill: var(--white);
+    }
+    .textWithArrow {
+        color: var(--white);
+        border: 1px solid transparent;
+    }
+    &:hover {
+        .hoverBlock {
+            left: 0;
+        }
+        .textWithArrow {
+            color: var(--blue);
+        }
+        .icon {
+            fill: var(--blue);
+        }
+    }
+    &:active {
+        .hoverBlock {
+            background: var(--grey-light);
+            transition: background-color 0s;
+        }
+    }
+    &:focus {
+        .textWithArrow {
+            border: 1px solid var(--white);
+            transition: border 0s;
+        }
+    }
+}
+
+// --------------- secondary_blue ----------------
+.secondary_blue {
+    background: transparent;
+    .hoverBlock {
+        background: var(--blue);
+    }
+    .icon {
+        fill: var(--blue);
+    }
+    .textWithArrow {
+        color: var(--blue);
+        border: 1px solid transparent;
+    }
+    &:hover {
+        .hoverBlock {
+            left: 0;
+        }
+        .textWithArrow {
+            color: var(--white);
+        }
+        .icon {
+            fill: var(--white);
+        }
+    }
+    &:active {
+        .hoverBlock {
+            background: var(--blue-deep);
+            transition: background-color 0s;
+        }
+    }
+    &:focus {
+        .textWithArrow {
+            border: 1px solid var(--white);
+            transition: border 0s;
+        }
+    }
+}
+
+// --------------- secondary_dark ----------------
+.secondary_dark {
+    background: transparent;
+    .hoverBlock {
+        background: var(--black);
+    }
+    .icon {
+        fill: var(--black);
+    }
+    .textWithArrow {
+        color: var(--black);
+        border: 1px solid transparent;
+    }
+    &:hover {
+        .hoverBlock {
+            left: 0;
+        }
+        .textWithArrow {
+            color: var(--white);
+        }
+        .icon {
+            fill: var(--white);
+        }
+    }
+    &:active {
+        .hoverBlock {
+            background: var(--black);
+            transition: background-color 0s;
+        }
+    }
+    &:focus {
+        .textWithArrow {
+            border: 1px solid var(--black);
+            transition: border 0s;
+        }
+    }
+}

@@ -1,0 +1,158 @@
+.Text {
+
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+
+
+.numbers_desktop {
+    font: var(--font-numbers-desktop);
+}
+
+.h1_desktop {
+    font: var(--font-h1-desktop);
+}
+
+.h2_desktop {
+    font: var(--font-h2-desktop);
+}
+
+.h2_light_desktop {
+    font: var(--font-h2-light-desktop);
+}
+
+.h3_desktop {
+    font: var(--font-h3-desktop);
+}
+
+.h4_desktop {
+    font: var(--font-h4-desktop);
+}
+
+.h4_medium_desktop {
+    font: var(--font-h4-medium-desktop);
+}
+
+.h4_italic_desktop {
+    font: var(--font-h4-italic-desktop);
+}
+
+.body_l_desktop {
+    font: var(--font-body-l-desktop);
+}
+
+.body_desktop {
+    font: var(--font-body-desktop);
+}
+
+.body_s_desktop {
+    font: var(--font-body-s-desktop);
+}
+
+.body_s_medium_desktop {
+    font: var(--font-body-s-medium-desktop);
+}
+
+.body_footer_desktop {
+    font: var(--font-body-footer-desktop);
+}
+
+.button_desktop {
+    font: var(--font-button-desktop);
+}
+
+.menu_desktop {
+    font: var(--font-menu-desktop);
+}
+
+.menu_caps_desktop {
+    font: var(--font-menu-caps-desktop);
+}
+
+.menu_large_italic_desktop {
+    font: var(--font-menu-large-italic-desktop);
+}
+
+.menu_large_italic_medium_desktop {
+    font: var(--font-menu-large-italic-medium-desktop);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.white {
+    color: var(--white);
+}
+
+.black {
+    color: var(--black);
+}
+
+.red {
+    color: var(--red-error);
+}
+
+.grey_light {
+    color: var(--grey-light);
+}
+
+.grey {
+    color: var(--grey);
+}
+
+.blue_light2 {
+    color: var(--blue-light2);
+}
+
+.borderBottom {
+    content: '';
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.header_light {
+    color: var(--white);
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    .borderBottom {
+        background: var(--white);
+    }
+    &:hover {
+        .borderBottom {
+            opacity: 1;
+        }
+    }
+}
+
+.header_dark {
+    color: var(--dark);
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    .borderBottom {
+        background: var(--blue);
+    }
+    &:hover {
+        .borderBottom {
+            opacity: 1;
+        }
+    }
+}

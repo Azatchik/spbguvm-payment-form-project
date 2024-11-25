@@ -1,0 +1,19 @@
+.Tooltip {
+    height: 41px;
+    background: var(--blue-light);
+    font: var(--font-button-desktop);
+    color: var(--blue);
+    padding: 10px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transition: all 0.3s ease-out;
+    border: 1px solid var(--blue);
+}
+
+.isVisible {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}

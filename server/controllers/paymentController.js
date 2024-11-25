@@ -1,0 +1,49 @@
+import * as uuid from 'uuid';
+import axios from 'axios';
+import config from '../config.js';
+import { decryptData } from '../services/decryptData.js';
+import Orders from '../models/Orders.js';
+
+class paymentController {
+    async createOrder(req, res) {
+        try {
+            const {
+                namePay, fullName, phone, email, description, sum,
+            } = req.body;
+
+            const data = {
+                userName: decryptData(config.userName),
+                password: decryptData(config.password),
+                orderNumber: uuid.v4(),
+                amount: Number(sum) * 100,
+                returnUrl: 'https://spbguvm.ru/',
+                description: `${namePay} ${fullName} ${description}`,
+                phone,
+                email,
+            };
+
+            const response = await axios.post(
+                config.urlPayment,
+                data,
+            );
+
+            if (response.data.orderId) {
+                const newOrder = new Orders({
+                    orderId: response.data.orderId,
+                    orderNumber: data.orderNumber,
+                    amount: data.amount,
+                    email: data.email,
+                    phone: data.phone,
+                    description: data.description,
+                });
+                await newOrder.save();
+            }
+
+            return res.status(response.status).json(response.data);
+        } catch (e) {
+            return res.status(500).json({ message: e });
+        }
+    }
+}
+
+export default new paymentController();

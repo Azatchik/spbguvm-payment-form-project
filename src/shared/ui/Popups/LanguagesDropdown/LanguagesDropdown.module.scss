@@ -1,0 +1,44 @@
+.LanguagesDropdown {
+    position: absolute;
+    border: 1px solid var(--blue);
+    background: var(--white);
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+    width: 99px;
+    height: 192px;
+}
+
+.isVisible {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.item {
+    width: 100%;
+    height: calc(192px/4);
+    padding-left: 10px;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    &:hover {
+        background: var(--blue-light);
+        .textLang,
+        .radioIcon,
+        .flagIcon {
+            transform: scale(0.90);
+        }
+    }
+}
+
+.itemSelected {
+    width: 100%;
+    height: calc(192px/4);
+    padding-left: 10px;
+    cursor: pointer;
+    background: var(--blue-light);
+    pointer-events: none;
+}
+
+.langWrapper {
+    width: 40px;
+}

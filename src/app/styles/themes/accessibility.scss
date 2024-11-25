@@ -1,0 +1,20 @@
+.app_accessibility_theme {
+    --white: #FDFDFE;
+    --grey-light: #EDF0F4;
+    --grey: #808388;
+    --grey-dark: #4F585B;
+    --dark: #333C43;
+    --black: #000A14;
+    --blue-light: #CED4F5;
+    --blue-light2: #727BF8;
+    --blue-grey: #727EC4;
+    --blue: #212F8A;
+    --blue-deep: #192366;
+    --gradient-light: linear-gradient(99.64deg, #FDFDFE -19.65%, #727EC4 117.72%),
+    radial-gradient(59.42% 59.42% at 103.31% -15.77%, rgba(229, 233, 255, 0) 0%, rgba(157, 167, 230, 0.6) 100%),
+    radial-gradient(38.18% 38.18% at 27.34% 61.82%, rgba(114, 126, 196, 0) 0%, rgba(100, 110, 168, 0.2) 100%);
+    --gradient-dark1: linear-gradient(99.64deg, #727BF8 -19.65%, #212F8A 117.72%),
+    radial-gradient(34.5% 34.5% at 20.59% 54.79%, rgba(16, 25, 79, 0.06) 0%, rgba(33, 47, 138, 0.6) 100%),
+    radial-gradient(37.94% 61.96% at 97.81% 23.12%, rgba(74, 93, 218, 0.05) 0%, rgba(33, 47, 138, 0.5) 100%);
+    --gradient-dark2: linear-gradient(99.67deg, #3C338A 0.21%, #212F8A 117.72%);
+}

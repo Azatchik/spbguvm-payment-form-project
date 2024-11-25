@@ -1,0 +1,58 @@
+.Header {
+    background: transparent;
+    position: absolute;
+    right: 50px;
+    left: 50px;
+    top: 20px;
+    z-index: var(--header-z-index);
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.headerWrapper {
+    width: 100%;
+    background: transparent;
+}
+
+.mainPanel {
+    width: 100%;
+    padding-inline: 30px;
+    height: var(--header-mainPanel-height);
+    z-index: 1;
+    position: relative;
+}
+
+.mainPanel::before {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(50px);
+}
+
+.light_theme {
+    .mainPanel {
+        background-color: var(--grey-light-opacity);
+    }
+}
+
+.dark_theme {
+    .mainPanel {
+        background: var(--grey-light);
+    }
+}
+
+.tools {
+    position: relative;
+}
+
+.tooltipEye {
+    top: 30px;
+    left: -90px;
+}

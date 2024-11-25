@@ -1,0 +1,11 @@
+.PaymentCart {
+    width: calc(99% - 688px);
+    max-width: 780px;
+    height: 100%;
+    background: var(--grey-light);
+    padding: 30px 30px 15px 30px;
+}
+
+.productsWrapper {
+    overflow: auto;
+}

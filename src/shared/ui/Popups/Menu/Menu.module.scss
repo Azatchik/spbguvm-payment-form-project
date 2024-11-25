@@ -1,0 +1,75 @@
+.Menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -5;
+    transition: 0.6s opacity;
+}
+
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: var(--blue-grey-opacity);
+    position: relative;
+}
+
+.content {
+    background: var(--white);
+    position: absolute;
+    left: 0;
+    right: 0;
+    min-width: 1280px;
+    height: 641px;
+    border: 5px solid var(--blue);
+    border-top: 0;
+    padding-inline: 50px;
+}
+
+.opened {
+    pointer-events: auto;
+    opacity: 1;
+    z-index: var(--menu-z-index);
+}
+
+.isClosing {
+    opacity: 0;
+}
+
+.menuWrapper {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0.8px 0 var(--blue-grey);
+}
+
+.title {
+    font: var(--font-h2-desktop);
+    color: var(--blue);
+    padding-top: 20px;
+    width: 27%;
+}
+
+.sectionsWrapper {
+    box-shadow: 0 0 0.8px 0 var(--blue-grey);
+    width: 73%;
+}
+
+.sectionMain {
+    color: var(--black);
+    font: var(--font-body-l-desktop);
+    box-shadow: -1px 0 0.8px -1px var(--blue-grey);
+    padding: 20px 0 0 10px;
+    width: 33.3%;
+}
+
+.subsections {
+    padding-left: 30px;
+}
+
+.subsection {
+    width: 251px;
+}

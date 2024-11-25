@@ -1,0 +1,27 @@
+export enum CheckoutPageValidateErrorTypes {
+    // Ошибки до запроса на сервер
+
+    // наименование платежа
+    EMPTY_NAME_PAY_ERROR = 'EMPTY_NAME_PAY_ERROR',
+    FORMAT_NAME_PAY_ERROR = 'FORMAT_NAME_PAY_ERROR',
+
+    // фио
+    EMPTY_FULL_NAME_ERROR = 'EMPTY_FULL_NAME_ERROR',
+    FORMAT_FULL_NAME_ERROR = 'FORMAT_FULL_NAME_ERROR',
+
+    // номер телефона
+    EMPTY_PHONE_ERROR = 'EMPTY_PHONE_ERROR',
+    FORMAT_PHONE_ERROR = 'FORMAT_PHONE_ERROR',
+
+    // почта
+    EMPTY_EMAIL_ERROR = 'EMPTY_EMAIL_ERROR',
+    FORMAT_EMAIL_ERROR = 'FORMAT_EMAIL_ERROR',
+
+    // описание платежа
+    EMPTY_DESCRIPTION_ERROR = 'EMPTY_DESCRIPTION_ERROR',
+    FORMAT_DESCRIPTION_ERROR = 'FORMAT_DESCRIPTION_ERROR',
+
+    // сумма платежа
+    EMPTY_SUM_ERROR = 'EMPTY_SUM_ERROR',
+    FORMAT_SUM_ERROR = 'FORMAT_SUM_ERROR',
+}

@@ -1,0 +1,55 @@
+.Icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_arrow {
+    .svg {
+        fill: var(--blue);
+    }
+    background: var(--blue-light);
+    border-radius: 18px;
+    width: 22px;
+    height: 22px;
+}
+
+.header_light {
+    cursor: pointer;
+    .svg {
+        stroke: var(--white);
+        opacity: 0.7;
+        transition: all 0.2s ease-out;
+    }
+    &:hover {
+       .svg {
+           opacity: 1;
+       }
+    }
+}
+
+.header_dark {
+    cursor: pointer;
+    .svg {
+        stroke: var(--dark);
+        opacity: 0.7;
+        transition: all 0.2s ease-out;
+    }
+    &:hover {
+        .svg {
+            opacity: 1;
+        }
+    }
+}
+
+.blue {
+    .svg {
+        fill: var(--blue);
+    }
+}
+
+.white {
+    .svg {
+        fill: var(--white);
+    }
+}

@@ -1,0 +1,11 @@
+.ContentWrapper {
+    padding-inline: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+.shadowWrapper {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 -1px 1px 0 var(--blue-grey);
+}

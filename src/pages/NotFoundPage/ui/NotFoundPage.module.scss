@@ -1,0 +1,23 @@
+.NotFoundPage {
+    background: var(--blue);
+    height: 100vh;
+    min-height: 600px;
+}
+
+.notFoundPageWrapper {
+    height: 100%;
+    padding-inline: 50px;
+}
+
+.stack {
+    box-shadow: 0 0 1px 0 var(--blue-grey);
+}
+
+.blueText {
+    display: inline;
+    margin-right: 15px;
+}
+
+.whiteText {
+    width: 530px;
+}

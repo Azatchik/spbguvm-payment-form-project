@@ -1,0 +1,25 @@
+.LangSwitcher {
+    position: relative;
+}
+
+.dropdown {
+    top: 33px;
+    left: -32px;
+    z-index: var(--languages-z-index);
+    position: absolute;
+}
+
+.icon {
+    z-index: var(--languages-z-index);
+    position: relative;
+}
+
+.transparentOverlay {
+    position: fixed;
+    background: transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: calc(var(--languages-z-index) - 2);
+}
