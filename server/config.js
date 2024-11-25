@@ -10,7 +10,9 @@ const config = {
     urlPayment: 'https://ecommerce.sberbank.ru/ecomm/gw/partner/api/v1/register.do',
     userName: '5951729730332de76a652658644f7bcb',
     password: '7733ad039484f7381a937ed3d3e550530f9bc1aa8762cae5f967f19e8a4d3e7d06bd90828dc8088e61957ac3cb84c029',
-    // cryptoKey, осторожно
+    userNameTest: 'cdeab55fa2a15e09b6bc893a68ac1c54',
+    passwordTest: '0bf14def166229fb6ceb4d88248dd8302adda24e649990603330e359e2bf290f',
+    // cryptoKey, WARNING!!!
 };
 
 export default config;

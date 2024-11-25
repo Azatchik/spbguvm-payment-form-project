@@ -8,7 +8,6 @@ import * as path from 'path';
 import rateLimit from 'express-rate-limit';
 import paymentRouter from './routes/paymentRouter.js';
 import config from './config.js';
-import checkIP from './middlewares/checkIP.js';
 
 const limiter = rateLimit({
     windowMs: 2 * 60 * 1000, // 15min
@@ -30,7 +29,6 @@ const corsOptions = {
 
 app.use(express.json());
 app.use(cors(corsOptions));
-app.use(checkIP(config.ALLOWEDIPs));
 app.use('/api', limiter, paymentRouter);
 
 const startApp = async () => {

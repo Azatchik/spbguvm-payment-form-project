@@ -12,8 +12,8 @@ class paymentController {
             } = req.body;
 
             const data = {
-                userName: decryptData(config.userName),
-                password: decryptData(config.password),
+                userName: decryptData(config.userNameTest),
+                password: decryptData(config.passwordTest),
                 orderNumber: uuid.v4(),
                 amount: Number(sum) * 100,
                 returnUrl: 'https://spbguvm.ru/',
