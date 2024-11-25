@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchCreateOrder } from '../services/fetchOrder/fetchCreateOrder';
-import { CheckoutPageSchema } from '../types/CheckoutPageSchema';
+import { CheckoutPageSchema } from '../types/checkoutPageSchema';
 
 const initialState: CheckoutPageSchema = {
     isLoading: false,
