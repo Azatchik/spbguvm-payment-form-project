@@ -9,19 +9,14 @@ import rateLimit from 'express-rate-limit';
 import paymentRouter from './routes/paymentRouter.js';
 import config from './config.js';
 
-const rootCa = fs.readFileSync(path.resolve('server', 'certificates', 'russian_trusted_root_ca.cer'));
-const issuingCert = fs.readFileSync(path.resolve('server', 'certificates', 'russian_trusted_sub_ca.cer'));
-
-const options = {
-    key: fs.readFileSync(path.resolve('server', 'key.pem')),
-    cert: fs.readFileSync(path.resolve('server', 'cert.pem')),
-    ca: [rootCa, issuingCert],
-};
-
 const limiter = rateLimit({
     windowMs: 2 * 60 * 1000, // 15min
     max: 5,
 });
+
+const rootCa = fs.readFileSync(path.resolve('server', 'certificates', 'russian_trusted_root_ca.cer'));
+const issuingCert = fs.readFileSync(path.resolve('server', 'certificates', 'russian_trusted_sub_ca.cer'));
+https.globalAgent.options.ca = [rootCa, issuingCert];
 
 dotenv.config();
 
@@ -39,8 +34,7 @@ app.use('/api', limiter, paymentRouter);
 const startApp = async () => {
     try {
         await mongoose.connect(config.DB_URL);
-        const httpsServer = https.createServer(options, app);
-        httpsServer.listen(PORT, () => console.log(`server started on port ${PORT}`));
+        app.listen(PORT, () => console.log(`server started on port ${PORT}`));
     } catch (e) {
         console.log(e);
     }
