@@ -9,6 +9,11 @@ import rateLimit from 'express-rate-limit';
 import paymentRouter from './routes/paymentRouter.js';
 import config from './config.js';
 
+const options = {
+    key: fs.readFileSync(path.resolve('server', 'key.pem')),
+    cert: fs.readFileSync(path.resolve('server', 'cert.pem')),
+};
+
 const limiter = rateLimit({
     windowMs: 2 * 60 * 1000, // 15min
     max: 5,
@@ -20,7 +25,7 @@ https.globalAgent.options.ca = [rootCa, issuingCert];
 
 dotenv.config();
 
-const PORT = 5000;
+const PORT = 443;
 const app = express();
 const corsOptions = {
     origin: config.ALLOWEDIPs,
@@ -34,7 +39,8 @@ app.use('/api', limiter, paymentRouter);
 const startApp = async () => {
     try {
         await mongoose.connect(config.DB_URL);
-        app.listen(PORT, () => console.log(`server started on port ${PORT}`));
+        const httpsServer = https.createServer(options, app);
+        httpsServer.listen(PORT, () => console.log(`server started on port ${PORT}`));
     } catch (e) {
         console.log(e);
     }
