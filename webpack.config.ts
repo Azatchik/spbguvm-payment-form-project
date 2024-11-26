@@ -17,7 +17,7 @@ export default (env: BuildEnv) => {
 
     const mode = env.mode || 'development';
     const PORT = env.port || 3000;
-    const apiUrl = env.apiUrl || 'http://192.168.1.9:5000';
+    const apiUrl = env.apiUrl || 'http://192.168.1.9:8443';
 
     const isDev = mode === 'development';
 

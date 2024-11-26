@@ -1,5 +1,5 @@
 const config = {
-    ALLOWEDIPs: ['https://spbguvmtest.ru', 'https://89.111.154.163', 'http://spbguvmtest.ru', 'http://89.111.154.163'],
+    ALLOWEDIPs: ['http://localhost:3000', 'http://89.111.154.109'],
     DB_URL: 'mongodb+srv://abaraev2003:5z57nSy4mMUjQ4lf@cluster0.viys7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
     cryptoKey: [
         0x88, 0x15, 0xb8, 0x65, 0xc0, 0x5e, 0x6f, 0x86,
