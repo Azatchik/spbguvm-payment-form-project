@@ -2,7 +2,6 @@ import * as uuid from 'uuid';
 import axios from 'axios';
 import config from '../config.js';
 import { decryptData } from '../services/decryptData.js';
-import Orders from '../models/Orders.js';
 
 class paymentController {
     async createOrder(req, res) {
@@ -26,18 +25,6 @@ class paymentController {
                 config.urlPayment,
                 data,
             );
-
-            if (response.data.orderId) {
-                const newOrder = new Orders({
-                    orderId: response.data.orderId,
-                    orderNumber: data.orderNumber,
-                    amount: data.amount,
-                    email: data.email,
-                    phone: data.phone,
-                    description: data.description,
-                });
-                await newOrder.save();
-            }
 
             return res.status(response.status).json(response.data);
         } catch (e) {

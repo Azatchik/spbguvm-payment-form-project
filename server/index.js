@@ -1,5 +1,4 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import * as fs from 'fs';
@@ -14,8 +13,8 @@ const limiter = rateLimit({
     max: 5,
 });
 
-const rootCa = fs.readFileSync(path.resolve('server', 'certificates', 'russian_trusted_root_ca.cer'));
-const issuingCert = fs.readFileSync(path.resolve('server', 'certificates', 'russian_trusted_sub_ca.cer'));
+const rootCa = fs.readFileSync(path.resolve('certificates', 'russian_trusted_root_ca.cer'));
+const issuingCert = fs.readFileSync(path.resolve('certificates', 'russian_trusted_sub_ca.cer'));
 https.globalAgent.options.ca = [rootCa, issuingCert];
 
 dotenv.config();
@@ -33,7 +32,6 @@ app.use('/api', limiter, paymentRouter);
 
 const startApp = async () => {
     try {
-        await mongoose.connect(config.DB_URL);
         app.listen(PORT, () => console.log(`server started on port ${PORT}`));
     } catch (e) {
         console.log(e);
