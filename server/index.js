@@ -25,7 +25,7 @@ https.globalAgent.options.ca = [rootCa, issuingCert];
 
 dotenv.config();
 
-const PORT = 443;
+const PORT = 8443;
 const app = express();
 const corsOptions = {
     origin: config.ALLOWEDIPs,
