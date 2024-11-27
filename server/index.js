@@ -8,6 +8,11 @@ import rateLimit from 'express-rate-limit';
 import paymentRouter from './routes/paymentRouter.js';
 import config from './config.js';
 
+const options = {
+    key: fs.readFileSync(path.resolve('key.pem')),
+    cert: fs.readFileSync(path.resolve('cert.pem')),
+};
+
 const limiter = rateLimit({
     windowMs: 2 * 60 * 1000, // 15min
     max: 5,
@@ -32,7 +37,8 @@ app.use('/api', limiter, paymentRouter);
 
 const startApp = async () => {
     try {
-        app.listen(PORT, () => console.log(`server started on port ${PORT}`));
+        const httpsServer = https.createServer(options, app);
+        httpsServer.listen(PORT, () => console.log(`server started on port ${PORT}`));
     } catch (e) {
         console.log(e);
     }
