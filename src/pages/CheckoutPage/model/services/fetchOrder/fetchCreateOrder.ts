@@ -53,7 +53,7 @@ export const fetchCreateOrder = createAsyncThunk<
         }
 
         try {
-            const response = await extra.api.post<FetchOrderReturnData>('/api/payment/create-order', {
+            const response = await extra.api.post<FetchOrderReturnData>('/payment/create-order', {
                 namePay,
                 fullName,
                 phone,

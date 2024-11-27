@@ -33,7 +33,7 @@ const corsOptions = {
 
 app.use(express.json());
 app.use(cors(corsOptions));
-app.use('/api', limiter, paymentRouter);
+app.use(limiter, paymentRouter);
 
 const startApp = async () => {
     try {
