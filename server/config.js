@@ -1,5 +1,5 @@
 const config = {
-    ALLOWEDIPs: ['http://89.111.154.163', 'http://spbguvmtest.ru', 'https://89.111.154.163', 'https://spbguvmtest.ru'],
+    ALLOWEDIPs: ['http://89.111.154.109', 'http://payment.spbguvm.ru', 'https://89.111.154.109', 'https://payment.spbguvm.ru'],
     cryptoKey: [
         0x88, 0x15, 0xb8, 0x65, 0xc0, 0x5e, 0x6f, 0x86,
         0x51, 0x24, 0x71, 0xea, 0xc5, 0x8b, 0x55, 0x03,
