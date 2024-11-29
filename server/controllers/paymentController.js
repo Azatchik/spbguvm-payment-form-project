@@ -19,6 +19,43 @@ class paymentController {
                 description: `${namePay} ${fullName} ${description}`,
                 phone,
                 email,
+                orderBundle: {
+                    ffdVersion: '1.2',
+                    receiptType: 'sell',
+                    company: {
+                        email: 'secretary@spbguvm.ru',
+                        sno: 'osn',
+                        inn: '7810232965',
+                        paymentAddress: 'https://spbguvm.ru',
+                    },
+                    payments: [
+                        {
+                            type: 1,
+                            sum: Number(sum) * 100,
+                        },
+                    ],
+                    total: Number(sum) * 100,
+                    cartItems: {
+                        items: [
+                            {
+                                positionId: '1',
+                                itemCode: namePay,
+                                name: description,
+                                quantity: {
+                                    value: 1,
+                                    measure: '255',
+                                },
+                                itemPrice: Number(sum) * 100,
+                                itemAmount: Number(sum) * 100,
+                                paymentMethod: 'full_payment',
+                                paymentObject: '13',
+                                tax: {
+                                    taxType: 0,
+                                },
+                            },
+                        ],
+                    },
+                },
             };
 
             const response = await axios.post(

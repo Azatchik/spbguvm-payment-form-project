@@ -1,5 +1,10 @@
 const config = {
-    ALLOWEDIPs: ['http://89.111.154.109', 'http://payment.spbguvm.ru', 'https://89.111.154.109', 'https://payment.spbguvm.ru'],
+    ALLOWEDIPs: [
+        'http://89.111.154.109',
+        'http://payment.spbguvm.ru',
+        'https://89.111.154.109',
+        'https://payment.spbguvm.ru',
+    ],
     cryptoKey: [
         0x88, 0x15, 0xb8, 0x65, 0xc0, 0x5e, 0x6f, 0x86,
         0x51, 0x24, 0x71, 0xea, 0xc5, 0x8b, 0x55, 0x03,
@@ -7,6 +12,7 @@ const config = {
         0x59, 0x97, 0xdb, 0xc7, 0xb2, 0xc5, 0x08, 0x2d,
     ],
     urlPayment: 'https://ecommerce.sberbank.ru/ecomm/gw/partner/api/v1/register.do',
+    urlPaymentTest: 'https://ecomtest.sberbank.ru/ecomm/gw/partner/api/v1/register.do',
     userName: '5951729730332de76a652658644f7bcb',
     password: '7733ad039484f7381a937ed3d3e550530f9bc1aa8762cae5f967f19e8a4d3e7d06bd90828dc8088e61957ac3cb84c029',
     userNameTest: 'cdeab55fa2a15e09b6bc893a68ac1c54',
