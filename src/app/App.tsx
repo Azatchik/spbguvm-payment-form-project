@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { Header, HeaderTheme } from 'widgets/Header';
 import { AppRouter } from 'app/providers/router';
 import { Footer } from 'widgets/Footer';
-import { isMobile, isTablet } from 'react-device-detect';
 
 function App() {
     const { theme } = useTheme();
@@ -15,18 +14,8 @@ function App() {
         document.body.className = theme;
     }, [theme]);
 
-    const appClassName = useMemo<string>(() => {
-        if (isMobile) {
-            return 'app_mobile';
-        }
-        if (isTablet) {
-            return 'app_tablet';
-        }
-        return 'app';
-    }, []);
-
     return (
-        <div className={classNames(appClassName, {}, [])}>
+        <div className={classNames('app', {}, [])}>
             <Suspense fallback="">
                 {/* <Header theme={HeaderTheme.LIGHT_THEME} /> */}
                 <AppRouter />
