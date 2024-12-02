@@ -8,9 +8,13 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ArrowPosition, Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
-import { isMobile, isTablet } from 'react-device-detect';
 import { CirclesLoader } from 'shared/ui/CirclesLoader/CirclesLoader';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
+import { Icon, IconTheme } from 'shared/ui/Icon/Icon';
+import masterCardIcon from 'shared/assets/icons/mastercard-logo.svg';
+import mirIcon from 'shared/assets/icons/mir-logo.svg';
+import visaIcon from 'shared/assets/icons/visa-logo.svg';
+import sberbankIcon from 'shared/assets/icons/sberbank-logo.svg';
 import { CheckoutPageValidateErrorTypes } from '../model/types/CheckoutPageValidateErrorTypes';
 import { fetchCreateOrder } from '../model/services/fetchOrder/fetchCreateOrder';
 import {
@@ -148,400 +152,6 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
         );
     }
 
-    if (isMobile) {
-        return (
-            <Page className={classNames(cls.CheckoutPageMobile, {}, [className])}>
-                {/* <Cover */}
-                {/*     headTextTheme={TextTheme.BLUE_LIGHT2} */}
-                {/*     greyText={t('Корзина')} */}
-                {/* > */}
-                {/*     {t('ОФОРМЛЕНИЕ ЗАКАЗА')} */}
-                {/* </Cover> */}
-                {/* <ContentWrapper> */}
-                {/*     <Payment /> */}
-                {/* </ContentWrapper> */}
-                <VStack
-                    maxW
-                    maxH
-                    gap="30"
-                    align="center"
-                    justify="center"
-                >
-                    <Text
-                        theme={TextTheme.BLUE}
-                        size={TextSize.H4_MEDIUM_DESKTOP}
-                    >
-                        Оплата онлайн
-                    </Text>
-                    <VStack
-                        maxW
-                        gap="8"
-                    >
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            Наименование платежа и кода КБК:
-                        </Text>
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_S_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            00000000000000000130 – обучение, ФПК, коммунальные услуги, проживание в общежитии, консультационные услуги
-                        </Text>
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_S_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            00000000000000000130 – утерянный пропуск
-                        </Text>
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_S_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            00000000000000000150 – добровольные пожертвования
-                        </Text>
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_S_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            00000000000000000130 – VetAs (ассамблеи)
-                        </Text>
-                    </VStack>
-                    <VStack
-                        gap="10"
-                        align="center"
-                    >
-                        <Text
-                            theme={TextTheme.GREY}
-                            size={TextSize.BODY_S_DESKTOP}
-                        >
-                            Для оплаты введите ваши данные и выберите удобный для Вас способ оплаты:
-                        </Text>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Код КБК:
-                            </Text>
-                            <Input
-                                placeholder="00000000000000000130"
-                                value={namePay}
-                                onChange={onChangeNamePay}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_NAME_PAY_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                ФИО:
-                            </Text>
-                            <Input
-                                placeholder="Иванов Иван Иванович"
-                                value={fullName}
-                                onChange={onChangeFullName}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_FULL_NAME_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Номер телефона:
-                            </Text>
-                            <Input
-                                placeholder="+79102123123"
-                                value={phone ? `+${phone}` : ''}
-                                onChange={onChangePhone}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_PHONE_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Email:
-                            </Text>
-                            <Input
-                                placeholder="myname@mail.ru"
-                                value={email}
-                                onChange={onChangeEmail}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_EMAIL_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Наименование услуги:
-                            </Text>
-                            <Input
-                                placeholder="Оплата за..... номер договора..... дату договора......."
-                                value={description}
-                                onChange={onChangeDescriptionPay}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_DESCRIPTION_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Сумма:
-                            </Text>
-                            <Input
-                                placeholder="990"
-                                value={sum}
-                                onChange={onChangeSum}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_SUM_ERROR)}
-                            />
-                        </VStack>
-                        {!!validationErrors.length && Object.entries(validateErrorTranslates)
-                            .filter(([err, text]) => validationErrors.includes(err as CheckoutPageValidateErrorTypes))
-                            .map(([err, text]) => (
-                                <Text
-                                    key={err}
-                                    theme={TextTheme.RED}
-                                    size={TextSize.BODY_S_DESKTOP}
-                                >
-                                    {text}
-                                </Text>
-                            ))}
-                        {!!error && (
-                            <Text
-                                theme={TextTheme.RED}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                {`Ошибка с сервера: ${error}`}
-                            </Text>
-                        )}
-                        <Button
-                            theme={ButtonTheme.PRIMARY_BLUE_FILL}
-                            onClick={onPayClick}
-                            arrowPosition={ArrowPosition.ARROW_RIGHT}
-                        >
-                            Оплатить
-                        </Button>
-                    </VStack>
-                </VStack>
-            </Page>
-        );
-    }
-
-    if (isTablet) {
-        return (
-            <Page className={classNames(cls.CheckoutPageTablet, {}, [className])}>
-                {/* <Cover */}
-                {/*     headTextTheme={TextTheme.BLUE_LIGHT2} */}
-                {/*     greyText={t('Корзина')} */}
-                {/* > */}
-                {/*     {t('ОФОРМЛЕНИЕ ЗАКАЗА')} */}
-                {/* </Cover> */}
-                {/* <ContentWrapper> */}
-                {/*     <Payment /> */}
-                {/* </ContentWrapper> */}
-                <VStack
-                    maxW
-                    maxH
-                    gap="30"
-                    align="center"
-                    justify="center"
-                >
-                    <Text
-                        theme={TextTheme.BLUE}
-                        size={TextSize.H4_MEDIUM_DESKTOP}
-                    >
-                        Оплата онлайн
-                    </Text>
-                    <VStack
-                        maxW
-                        gap="8"
-                    >
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            Наименование платежа и кода КБК:
-                        </Text>
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_S_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            00000000000000000130 – обучение, ФПК, коммунальные услуги, проживание в общежитии, консультационные услуги
-                        </Text>
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_S_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            00000000000000000130 – утерянный пропуск
-                        </Text>
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_S_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            00000000000000000150 – добровольные пожертвования
-                        </Text>
-                        <Text
-                            theme={TextTheme.BLUE}
-                            size={TextSize.BODY_S_DESKTOP}
-                            className={cls.textNamePay}
-                        >
-                            00000000000000000130 – VetAs (ассамблеи)
-                        </Text>
-                    </VStack>
-                    <VStack
-                        gap="10"
-                        align="center"
-                    >
-                        <Text
-                            theme={TextTheme.GREY}
-                            size={TextSize.BODY_S_DESKTOP}
-                        >
-                            Для оплаты введите ваши данные и выберите удобный для Вас способ оплаты:
-                        </Text>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Код КБК:
-                            </Text>
-                            <Input
-                                placeholder="00000000000000000130"
-                                value={namePay}
-                                onChange={onChangeNamePay}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_NAME_PAY_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                ФИО:
-                            </Text>
-                            <Input
-                                placeholder="Иванов Иван Иванович"
-                                value={fullName}
-                                onChange={onChangeFullName}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_FULL_NAME_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Номер телефона:
-                            </Text>
-                            <Input
-                                placeholder="+79102123123"
-                                value={phone ? `+${phone}` : ''}
-                                onChange={onChangePhone}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_PHONE_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Email:
-                            </Text>
-                            <Input
-                                placeholder="myname@mail.ru"
-                                value={email}
-                                onChange={onChangeEmail}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_EMAIL_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Наименование услуги:
-                            </Text>
-                            <Input
-                                placeholder="Оплата за..... номер договора..... дату договора......."
-                                value={description}
-                                onChange={onChangeDescriptionPay}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_DESCRIPTION_ERROR)}
-                            />
-                        </VStack>
-                        <VStack>
-                            <Text
-                                theme={TextTheme.BLACK}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                Сумма:
-                            </Text>
-                            <Input
-                                placeholder="990"
-                                value={sum}
-                                onChange={onChangeSum}
-                                isRequired
-                                isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_SUM_ERROR)}
-                            />
-                        </VStack>
-                        {!!validationErrors.length && Object.entries(validateErrorTranslates)
-                            .filter(([err, text]) => validationErrors.includes(err as CheckoutPageValidateErrorTypes))
-                            .map(([err, text]) => (
-                                <Text
-                                    key={err}
-                                    theme={TextTheme.RED}
-                                    size={TextSize.BODY_S_DESKTOP}
-                                >
-                                    {text}
-                                </Text>
-                            ))}
-                        {!!error && (
-                            <Text
-                                theme={TextTheme.RED}
-                                size={TextSize.BODY_S_DESKTOP}
-                            >
-                                {`Ошибка с сервера: ${error}`}
-                            </Text>
-                        )}
-                        <Button
-                            theme={ButtonTheme.PRIMARY_BLUE_FILL}
-                            onClick={onPayClick}
-                            arrowPosition={ArrowPosition.ARROW_RIGHT}
-                        >
-                            Оплатить
-                        </Button>
-                    </VStack>
-                </VStack>
-            </Page>
-        );
-    }
-
     return (
         <Page className={classNames(cls.CheckoutPage, {}, [className])}>
             {/* <Cover */}
@@ -556,56 +166,9 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
             <VStack
                 maxW
                 maxH
-                gap="64"
                 align="center"
                 justify="center"
             >
-                <Text
-                    theme={TextTheme.BLUE}
-                    size={TextSize.H2_DESKTOP}
-                >
-                    Оплата онлайн
-                </Text>
-                <VStack
-                    maxW
-                    gap="16"
-                >
-                    <Text
-                        theme={TextTheme.BLUE}
-                        size={TextSize.H4_MEDIUM_DESKTOP}
-                        className={cls.textNamePay}
-                    >
-                        Наименование платежа и кода КБК:
-                    </Text>
-                    <Text
-                        theme={TextTheme.BLUE}
-                        size={TextSize.BODY_DESKTOP}
-                        className={cls.textNamePay}
-                    >
-                        00000000000000000130 – обучение, ФПК, коммунальные услуги, проживание в общежитии, консультационные услуги
-                    </Text>
-                    <Text
-                        theme={TextTheme.BLUE}
-                        size={TextSize.BODY_DESKTOP}
-                        className={cls.textNamePay}
-                    >
-                        00000000000000000130 – утерянный пропуск
-                    </Text>
-                    <Text
-                        theme={TextTheme.BLUE}
-                        size={TextSize.BODY_DESKTOP}
-                        className={cls.textNamePay}
-                    >
-                        00000000000000000150 – добровольные пожертвования
-                    </Text>
-                    <Text
-                        theme={TextTheme.BLUE}
-                        size={TextSize.BODY_DESKTOP}
-                        className={cls.textNamePay}
-                    >
-                        00000000000000000130 – VetAs (ассамблеи)
-                    </Text>
-                </VStack>
                 <VStack
                     gap="10"
                     align="center"
@@ -732,6 +295,33 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                     >
                         Оплатить
                     </Button>
+                    <VStack
+                        maxW
+                        align="center"
+                    >
+                        <HStack
+                            maxW
+                            gap="30"
+                            justify="center"
+                        >
+                            <Icon
+                                Svg={visaIcon}
+                                theme={IconTheme.CLEAN}
+                            />
+                            <Icon
+                                Svg={masterCardIcon}
+                                theme={IconTheme.CLEAN}
+                            />
+                            <Icon
+                                Svg={mirIcon}
+                                theme={IconTheme.CLEAN}
+                            />
+                        </HStack>
+                        <Icon
+                            Svg={sberbankIcon}
+                            theme={IconTheme.CLEAN}
+                        />
+                    </VStack>
                 </VStack>
             </VStack>
         </Page>
