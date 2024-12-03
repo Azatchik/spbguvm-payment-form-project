@@ -131,7 +131,7 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                 className={cls.redirection}
             >
                 <Text theme={TextTheme.BLACK} size={TextSize.H4_DESKTOP}>
-                    Перенаправление...
+                    Подготовка...
                 </Text>
             </HStack>
         );
