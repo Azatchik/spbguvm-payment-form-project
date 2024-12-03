@@ -170,8 +170,9 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                 justify="center"
             >
                 <VStack
-                    gap="10"
-                    align="center"
+                    gap="6"
+                    align="start"
+                    maxW
                 >
                     <Text
                         theme={TextTheme.GREY}
@@ -179,10 +180,15 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                     >
                         Для оплаты введите ваши данные и выберите удобный для Вас способ оплаты:
                     </Text>
-                    <VStack>
+                    <HStack
+                        gap="14"
+                        justify="between"
+                        maxW
+                    >
                         <Text
                             theme={TextTheme.BLACK}
                             size={TextSize.BODY_S_DESKTOP}
+                            className={cls.inputPlaceholder}
                         >
                             Код КБК:
                         </Text>
@@ -193,11 +199,16 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                             isRequired
                             isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_NAME_PAY_ERROR)}
                         />
-                    </VStack>
-                    <VStack>
+                    </HStack>
+                    <HStack
+                        gap="14"
+                        justify="between"
+                        maxW
+                    >
                         <Text
                             theme={TextTheme.BLACK}
                             size={TextSize.BODY_S_DESKTOP}
+                            className={cls.inputPlaceholder}
                         >
                             ФИО:
                         </Text>
@@ -208,11 +219,16 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                             isRequired
                             isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_FULL_NAME_ERROR)}
                         />
-                    </VStack>
-                    <VStack>
+                    </HStack>
+                    <HStack
+                        gap="14"
+                        justify="between"
+                        maxW
+                    >
                         <Text
                             theme={TextTheme.BLACK}
                             size={TextSize.BODY_S_DESKTOP}
+                            className={cls.inputPlaceholder}
                         >
                             Номер телефона:
                         </Text>
@@ -223,11 +239,16 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                             isRequired
                             isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_PHONE_ERROR)}
                         />
-                    </VStack>
-                    <VStack>
+                    </HStack>
+                    <HStack
+                        gap="14"
+                        justify="between"
+                        maxW
+                    >
                         <Text
                             theme={TextTheme.BLACK}
                             size={TextSize.BODY_S_DESKTOP}
+                            className={cls.inputPlaceholder}
                         >
                             Email:
                         </Text>
@@ -238,11 +259,16 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                             isRequired
                             isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_EMAIL_ERROR)}
                         />
-                    </VStack>
-                    <VStack>
+                    </HStack>
+                    <HStack
+                        gap="14"
+                        justify="between"
+                        maxW
+                    >
                         <Text
                             theme={TextTheme.BLACK}
                             size={TextSize.BODY_S_DESKTOP}
+                            className={cls.inputPlaceholder}
                         >
                             Наименование услуги:
                         </Text>
@@ -253,11 +279,16 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                             isRequired
                             isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_DESCRIPTION_ERROR)}
                         />
-                    </VStack>
-                    <VStack>
+                    </HStack>
+                    <HStack
+                        gap="14"
+                        justify="between"
+                        maxW
+                    >
                         <Text
                             theme={TextTheme.BLACK}
                             size={TextSize.BODY_S_DESKTOP}
+                            className={cls.inputPlaceholder}
                         >
                             Сумма:
                         </Text>
@@ -268,7 +299,7 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                             isRequired
                             isEmptyError={validationErrors.includes(CheckoutPageValidateErrorTypes.EMPTY_SUM_ERROR)}
                         />
-                    </VStack>
+                    </HStack>
                     {!!validationErrors.length && Object.entries(validateErrorTranslates)
                         .filter(([err, text]) => validationErrors.includes(err as CheckoutPageValidateErrorTypes))
                         .map(([err, text]) => (
@@ -295,33 +326,28 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                     >
                         Оплатить
                     </Button>
-                    <VStack
+                    <HStack
                         maxW
-                        align="center"
+                        gap="20"
+                        justify="center"
                     >
-                        <HStack
-                            maxW
-                            gap="30"
-                            justify="center"
-                        >
-                            <Icon
-                                Svg={visaIcon}
-                                theme={IconTheme.CLEAN}
-                            />
-                            <Icon
-                                Svg={masterCardIcon}
-                                theme={IconTheme.CLEAN}
-                            />
-                            <Icon
-                                Svg={mirIcon}
-                                theme={IconTheme.CLEAN}
-                            />
-                        </HStack>
                         <Icon
                             Svg={sberbankIcon}
                             theme={IconTheme.CLEAN}
                         />
-                    </VStack>
+                        <Icon
+                            Svg={visaIcon}
+                            theme={IconTheme.CLEAN}
+                        />
+                        <Icon
+                            Svg={masterCardIcon}
+                            theme={IconTheme.CLEAN}
+                        />
+                        <Icon
+                            Svg={mirIcon}
+                            theme={IconTheme.CLEAN}
+                        />
+                    </HStack>
                 </VStack>
             </VStack>
         </Page>

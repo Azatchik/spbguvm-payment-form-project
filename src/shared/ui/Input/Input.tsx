@@ -92,7 +92,7 @@ export const Input = memo((props: InputProps) => {
                     )}
                     <Text
                         theme={TextTheme.GREY}
-                        size={TextSize.BODY_S_MEDIUM_DESKTOP}
+                        size={TextSize.BODY_FOOTER_DESKTOP}
                         className={cls.requiredText}
                     >
                         {t('Обязательно для заполнения')}

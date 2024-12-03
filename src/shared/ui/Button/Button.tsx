@@ -47,15 +47,10 @@ export const Button = memo((props: ButtonProps) => {
         ...otherProps
     } = props;
 
-    const styles: CSSProperties = {
-        width: `${children.length * 20}px`,
-    };
-
     return (
         <div
             role="button"
             className={classNames(cls.Button, {}, [className, cls[theme]])}
-            style={styles}
             {...otherProps}
         >
             <div className={cls.hoverBlock} />

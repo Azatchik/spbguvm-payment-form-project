@@ -1,9 +1,9 @@
 .field {
     width: 300px;
-    height: 56px;
-    font: var(--font-body-desktop);
+    height: 20px;
+    font: var(--font-body-s-desktop);
     color: var(--black);
-    padding: 13px 16px 13px 16px;
+    padding: 10px 5px 10px 5px;
     border-radius: 4px;
     border: 1px solid var(--black-opacity1);
 }
@@ -28,7 +28,7 @@
 .focused {
     .field {
         border: 1px solid var(--black);
-        outline: 4px solid var(--grey-light);
+        outline: 2px solid var(--grey-light);
     }
     .field::placeholder {
         color: var(--black-opacity1);
@@ -38,7 +38,7 @@
 .redFocused {
     .field {
         border: 1px solid var(--red-error);
-        outline: 4px solid var(--red-error-bg);
+        outline: 2px solid var(--red-error-bg);
     }
     .field::placeholder {
         color: var(--black-opacity1);
