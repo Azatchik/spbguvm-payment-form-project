@@ -130,7 +130,7 @@ const CheckoutPage = memo((props: CheckoutPageProps) => {
                 justify="center"
                 className={cls.redirection}
             >
-                <Text theme={TextTheme.BLACK} size={TextSize.H4_DESKTOP}>
+                <Text theme={TextTheme.BLACK} size={TextSize.BODY_L_DESKTOP}>
                     Подготовка...
                 </Text>
             </HStack>
